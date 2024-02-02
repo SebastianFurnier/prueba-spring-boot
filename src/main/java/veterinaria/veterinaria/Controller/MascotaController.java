@@ -18,7 +18,6 @@ public class MascotaController {
         mascotaService.mascotaCrear(mascota);
         return mascotaService.getMascota(mascota.getId_mascota());
     }
-
     @PutMapping("/mascota/editar")
     @ResponseBody
     public Mascota editarMascota(@RequestBody Mascota mascota){
