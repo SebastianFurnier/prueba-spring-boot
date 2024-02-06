@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,9 +17,17 @@ public class Mascota {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
 
+    @NotNull
+    @Positive
     private Long id_mascota;
+    @NotBlank
+    @NotNull
     private String nombre;
+    @NotBlank
+    @NotNull
     private String especie;
+    @NotBlank
+    @NotNull
     private String raza;
     private String color;
 
